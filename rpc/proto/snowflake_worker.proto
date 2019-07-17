@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option objc_class_prefix = "Snowflake";
+
+package proto;
+
+service Greeter {
+    rpc GetId (SnowflakeRequest) returns (SnowflakeResponse) {
+    }
+}
+
+message SnowflakeRequest {
+    int32 count = 1;
+}
+
+message SnowflakeResponse {
+    repeated int64 ids = 1;
+}

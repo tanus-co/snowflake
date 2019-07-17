@@ -39,7 +39,12 @@ func (c *SnowflakeClient) GetId() int64 {
 	if err != nil {
 		return 0
 	}
-	return response.(*proto.SnowflakeResponse).Ids[0]
+	snowflakeResponse := response.(*proto.SnowflakeResponse)
+	if snowflakeResponse != nil && len(snowflakeResponse.Ids) > 0 {
+		return snowflakeResponse.Ids[0]
+	} else {
+		return 0
+	}
 }
 
 //获取多个id
@@ -52,5 +57,10 @@ func (c *SnowflakeClient) GetIds(count int32) []int64 {
 	if err != nil {
 		return nil
 	}
-	return response.(*proto.SnowflakeResponse).Ids
+	snowflakeResponse := response.(*proto.SnowflakeResponse)
+	if snowflakeResponse != nil && len(snowflakeResponse.Ids) > 0 {
+		return snowflakeResponse.Ids
+	} else {
+		return nil
+	}
 }

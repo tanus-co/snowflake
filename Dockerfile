@@ -1,9 +1,8 @@
 FROM golang:1.12.5
 
-ADD . /go/src/github.com/tanus-co/snowflake
+ADD ./snowflake /bin/
+ADD ./app.yml /go/
 
-RUN go install /go/src/github.com/tanus-co/snowflake
+ENTRYPOINT /bin/snowflake
 
-ENTRYPOINT /go/bin/snowflake
-
-EXPOSE 22122
+EXPOSE 50051

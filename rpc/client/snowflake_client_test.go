@@ -4,7 +4,7 @@ import "testing"
 
 func TestSnowflakeClient_GetId(t *testing.T) {
 	client := &SnowflakeClient{
-		Address: "127.0.0.1:50051",
+		Address: "snowflake.rpc.tanus.iooc.cc:10016",
 	}
 	id := client.GetIds(10)
 	if len(id) != 10 {

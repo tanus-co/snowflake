@@ -12,6 +12,7 @@ pipeline:
 trigger:
   branch:
     - develop
+    - feature/*
   event:
     - push
     - merge

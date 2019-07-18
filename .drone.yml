@@ -1,6 +1,6 @@
 workspace:
-  base: /go
-  path: src/github.com/tanus-co/snowflake
+  base: /src
+  path: github.com/tanus-co/snowflake
 
 pipeline:
   build:

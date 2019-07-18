@@ -1,0 +1,15 @@
+version: '2'
+services:
+  snowflake:
+    image: "snowflake:1.0.0"
+    volumes:
+      - /etc/localtime:/etc/localtime
+    restart: always
+    networks:
+      network:
+        aliases:
+          - snowflake
+networks:
+  network:
+    external:
+      name: tanus_network

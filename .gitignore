@@ -13,3 +13,4 @@
 .idea
 *.ml
 go.sum
+/app.yml
